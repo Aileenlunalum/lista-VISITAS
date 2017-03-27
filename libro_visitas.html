@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> Articulos </h1>
+    <h2>Hola mundo</h2>
+    <style>
+      span {
+           background-color: #ffffff;
+            text-align:center;
+            font-size:14px;
+           }
+        .fuente1 {font-size:14px;}
+        .fuente2 {font-size:1em;}
+    </style>
+
+   <span id="ComentarioRReciente"></span>
+
+      <div id=div1>
+     <input  type="button" value="Texto Grande" onclick=maximizar() style='width:180px; height:30px;background:#D133FF'>
+       <input  type="button" value="Texto pequeño" onclick=minimizar() style='width:180px; height:30px;background:#D133FF'>
+         <input  type="button" value="Color de texto" onclick=" CmbioColor()"style='width:180px;height:30px;background:blue'>
+          <input type="button" value="Color de fondo" onclick=" fondoColor()" style='width:180px;height:30px;background:blue'>
+           <input type="button" value="Alinear a la izquierda" onclick= "moverIzquierda()"style='width:180px;height:30px;background:#ff1234'>
+            <input  type="button" value="Centrar" onclick="CentrarTexto()" style='width:180px;height:30px; background:#ff1234'>
+            <input type="button" value="Alinear a la derecha" onclick="moverDerecha()" style='width:180px; height:30px; background:#ff1234'>
+     </div>
+      <div >
+       <textarea id="textoModificable"  oninput=" myFunction()" rows="6" cols="100" style='font-size:14px; width:1290px' ></textarea>
+  </div>
+          <p align=center id="comentarioActual"    style='font-size:14px; color:#560AAC ' ></p>
+
+    <script>
+
+function myFunction() {
+    var x = document.getElementById("textoModificable").value;
+    document.getElementById("comentarioActual").innerHTML = x;
+
+}
+  var fontSize = 1;
+function maximizar() {
+  fontSize += 0.05;
+    document.getElementById("comentarioActual").style.fontSize= fontSize + "em";
+}
+function minimizar(){
+    fontSize -= 0.05;
+    document.getElementById("comentarioActual").style.fontSize= fontSize + "em";
+}
+function CmbioColor(){
+
+    document.getElementById("comentarioActual").style.color= "#EC5A9F";
+}
+function fondoColor(){
+
+    document.getElementById("comentarioActual").style.background= "#C4FCF5";
+
+
+}
+
+function moverIzquierda(){
+   document.getElementById("comentarioActual").align = "left";
+}
+function moverDerecha(){
+   document.getElementById("comentarioActual").align = "right";
+}
+function CentrarTexto(){
+   document.getElementById("comentarioActual").align = "center";
+}
+
+</script>
+  </body>
+
+</html>
